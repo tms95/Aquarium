@@ -491,6 +491,12 @@
 				(document.getElementById("carn").style.backgroundColor == "green" || document.getElementById("herb").style.backgroundColor == "green" || document.getElementById("omni").style.backgroundColor == "green") &&
 				(document.getElementById("social").style.backgroundColor == "green" || document.getElementById("notSocial").style.backgroundColor == "green")) {
 				console.log(obj);
+				
+				var storageRef = firebase.storage().ref();
+				var url = obj.url;
+				var blob = new Blob([JSON.stringify(obj, null, 2)], {type : 'application/json'});
+				var uploadTask = storageRef.child(url.substring(20,27)).put(blob);    
+								
 				gameInstance.SendMessage("Launcher","ReadURL",JSON.stringify(obj)); 	
 			}
 		}
@@ -583,6 +589,28 @@
 		</div>
 
 		</div>
+		
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-app.js"></script>
+
+	<!-- TODO: Add SDKs for Firebase products that you want to use
+		 https://firebase.google.com/docs/web/setup#available-libraries -->
+	<script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-storage.js"></script>
+
+	<script>
+	  // Your web app's Firebase configuration
+	  var firebaseConfig = {
+		apiKey: "AIzaSyBiwOcFGw663nOiJGESNas1LlDUVKtQ4xw",
+		authDomain: "aquarium-7c9d4.firebaseapp.com",
+		databaseURL: "https://aquarium-7c9d4.firebaseio.com",
+		projectId: "aquarium-7c9d4",
+		storageBucket: "gs://aquarium-7c9d4.appspot.com/",
+		messagingSenderId: "165560843071",
+		appId: "1:165560843071:web:a5082ce28083b38872f18a"
+	  };
+	  // Initialize Firebase
+	  firebase.initializeApp(firebaseConfig);
+	</script>
   </body>
   <script src="TemplateData/UnityProgress.js"></script>  
     <script src="Build/UnityLoader.js"></script>
