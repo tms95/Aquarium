@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=1">
     <title>Unity WebGL Player | UNetManager</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
@@ -11,33 +11,30 @@
 
 	/******************************************/
 	
+	
 	html,body {
 		width : 100%;
+		height: 100%;
 		margin : 0px;
 		padding : 0px;
 		overflow-x: hidden;
+		font-size: 100%;
 	}
 	
 	h1 {
 	  font-family: Helvetica;
-		font-size: 300%;
-		font-weight: bold;
-		color: #fff;
-	}
-
-	h2 {
-		font-family: Helvetica;
-		font-size: 150%;
-		font-weight: 400;
-	}
-	
-	h3 {
-	  font-family: Helvetica;
-		font-size: 300%;
+		font-size: 3.0vw;
 		font-weight: bold;
 		color: #fff;
 		height: 50px;
 	}
+	
+	h2 {
+		font-family: Helvetica;
+		font-size: 1.5vw;
+		font-weight: 400;
+	}
+	
 
 	.section,
 	.container,
@@ -50,13 +47,13 @@
 	.section {
 		position: relative;
 		height: 400px;
-		width: 100%;
+		width: 100vw;
 	}
 	
 	.fishType {
 		position: relative;
-		height: 600px;
-		width: 100%;
+		height: 75vh;
+		width: 100vw;
 		margin: 0;
 		background: #23b3f6;
 		display: flex;
@@ -66,8 +63,8 @@
 	
 	.facingRight {
 		position: relative;
-		height: 400px;
-		width: 100%;
+		height: 40vh;
+		width: 100vw;
 		margin: 0;
 		background: #85d5fa;
 		display: flex;
@@ -76,8 +73,8 @@
 	
 	.feedingBehaviour {
 		position: relative;
-		height: 400px;
-		width: 100%;
+		height: 40vh;
+		width: 100vw;
 		margin: 0;
 		background: #0999dc;
 		display: flex;
@@ -86,12 +83,19 @@
 	
 	.socialBehaviour {
 		position: relative;
-		height: 400px;
-		width: 100%;
+		height: 110vh;
+		width: 100vw;
 		margin: 0;
 		background: #0777ab;
 		display: flex;
 		justify-content: center;
+	}
+	
+	.webgl-content {
+		position: absolute;
+		top: 65vh;
+		width: 60vw;
+		height: 60vh;
 	}
 
 	.container {
@@ -99,12 +103,13 @@
 		margin: 0;
 		top: 70%;
 		left: 40%;
+		width: 25vw
 	}
 	
 	.imgcontainer {
 		position: absolute;
-		height: 50%;
-		width: 30%;
+		height: 15vh;
+		width: 35vw;
 		margin: 0;
 		top: 40%;
 		text-align:center;
@@ -112,8 +117,8 @@
 	
 	.pelContainer {
 		position: absolute;
-		height: 40%;
-		width: 25%;
+		height: 20vh;
+		width: 20vw;
 		margin: 0;
 		top: 40%;
 		right: 12.5%;	
@@ -122,8 +127,8 @@
 	
 	.demContainer {
 		position: absolute;
-		height: 40%;
-		width: 25%;
+		height: 20vh;
+		width: 20vw;
 		margin: 0;
 		top: 40%;
 		left: 12.5%;
@@ -133,33 +138,33 @@
 	.carnContainer {
 		position: absolute;
 		height: 25%;
-		width: 25%;
-		top: 50%;
-		left: 12.5%;
+		width: 20vw;
+		top: 20vh;
+		left: 15vw;
 		text-align:center;
 	}
 	
 	.herbContainer {
 		position: absolute;
 		height: 25%;
-		width: 25%;
-		top: 50%;
-		left: 35%;
+		width: 20vw;
+		top: 20vh;
+		left: 40vw;
 		text-align:center;
 	}
 	
 	.omniContainer{
 		position: absolute;
 		height: 25%;
-		width: 25%;
+		width: 20vw;
 		top: 50%;
-		right: 12.5%;
+		right: 15vw;
 		text-align:center;
 	}
 	
 	.pelExamples {
 		position: absolute;
-		height: 30%;
+		height: 10vh;
 		width: 50%;
 		margin: 0;
 		top: 70%;
@@ -169,7 +174,7 @@
 	
 	.demExamples {
 		position: absolute;
-		height: 30%;
+		height: 10vh;
 		width: 50%;
 		margin: 0;
 		top: 70%;
@@ -181,8 +186,8 @@
 		align-items: center;
 		position: absolute;
 		background-color: #FFC107;
-		height: 50px;
-		width: 150px;
+		height: 5vh;
+		width: 15vw;
 		border-radius: 25px;
 		margin: 0;
 		cursor: pointer;
@@ -192,43 +197,57 @@
 	}
 	
 	.leftButton {
-		left: 25%;
+		left: 10%;
 		top: 50%;
 	}
 	
 	.rightButton {
-		right: 25%;	
+		right: 10%;	
 		top: 50%;
 	}
 	
+	.solButton {
+		left: 25%;
+		top: 20%;
+	}
+	
+	.socButton {
+		right: 25%;
+		top: 20%;
+	}
+	
+	
 	.demButton {
-		left: 30%;
-		top: -25%;
+		left: 10%;
+		top: -50%;
 	}
 	
 	.pelButton {
-		right: 30%;
-		top: -25%;
+		right: 10%;
+		top: -50%;
 	}
 	
 	.carnButton {
-		left: 35%;
-		top: -40%;
+		left: 12.5%;
+		top: -50%;
 	}
 	
 	.herbButton {
-		left: 35%;
-		top: -40%;
+		left: 12.5%;
+		top: -50%;
 	}
 	
 	.omniButton {
-		right: 35%;	
-		top: -40%;
+		right: 12.5%;	
+		top: -50%;
 	}
 	
 	.s-header,
 	.s-three {
 		background: #B3E5FC;
+		width: 100vw;
+		height: 35vh;
+		align-items: middle;
 	}
 
 	.s-one,
@@ -264,9 +283,14 @@
 		box-shadow: #d5a310 0 0 10px 10px;
 	}
 	
-	.webgl-content {
-		position: absolute;
-		top: 2525px;
+	input[type="file"] {
+		font-size: 1vw;
+	}
+	
+	.img1,
+	.img2,
+	.img3 {
+		width: 15vw;
 	}
 	
 	</style>
@@ -278,7 +302,7 @@
 			<h1>Submete o teu desenho: </h1>
 			<form id="imgur" >
 			<div class="container">
-				<input type="file" class="imgur" accept="image/*" data-max-size="5000"/>
+				<input type="file" class="imgur" style="" accept="image/*" data-max-size="5000"/>
 			</div>
 			</form>
 			
@@ -504,7 +528,7 @@
 		
 		
 		<div class="facingRight">
-		<h3> Para que lado está virado?</h3>
+		<h1> Para que lado está virado?</h1>
 			<div class="imgcontainer" id="orient"></div>
 			<span class="button b-one leftButton" onclick="buttonChange('leftB')" id="leftB">
 				<h2>&#9668; Esquerdo</h2>
@@ -515,7 +539,7 @@
 		</div>
 		
 		<div class="fishType">
-		<h3>Quanto à zona em que vive, é:</h3>
+		<h1>Quanto à zona em que vive, é:</h1>
 		
 			<div class="pelContainer">
 					<span class="button b-one pelButton" onclick="buttonChange('pelagic')" id="pelagic">
@@ -525,9 +549,9 @@
 					<h2>É ágil e nada longas distâncias.</h2>
 			</div>
 			<div class="pelExamples">
-			<img src="https://i.imgur.com/0K3XKeu.jpg"></img>
-			<img src="https://i.imgur.com/mtTO3oM.jpg"></img>
-			<img src="https://i.imgur.com/EOo6fX9.jpg"></img>
+			<img class="img1" src="https://i.imgur.com/0K3XKeu.jpg"></img>
+			<img class="img2" src="https://i.imgur.com/mtTO3oM.jpg"></img>
+			<img class="img3" src="https://i.imgur.com/EOo6fX9.jpg"></img>
 			</div>
 			<div class="demContainer">
 					<span class="button b-one demButton" onclick="buttonChange('demersal')" id="demersal">
@@ -537,16 +561,16 @@
 					<h2>Faz emboscadas ou camufla-se para caçar.</h2>				
 			</div>
 			<div class="demExamples">
-			<img src="https://i.imgur.com/8Quuuo5.jpg"></img>
-			<img src="https://i.imgur.com/idoH8L6.jpg"></img>
-			<img src="https://i.imgur.com/Wi8S9uA.png"></img>
+			<img class="img1" src="https://i.imgur.com/8Quuuo5.jpg"></img>
+			<img class="img2" src="https://i.imgur.com/idoH8L6.jpg"></img>
+			<img class="img3" src="https://i.imgur.com/Wi8S9uA.png"></img>
 			
 			</div>
 		</div>
 
 		
 		<div class="feedingBehaviour">
-		<h3>Quanto ao que come, é:</h3>
+		<h1>Quanto ao que come, é:</h1>
 			<div class="herbContainer">
 				<span class="button b-one herbButton" onclick="buttonChange('herb')" id="herb">
 				<h2>Herbívoro</h2>
@@ -569,25 +593,22 @@
 		
 		<div class="socialBehaviour">
 		<h1>Em termos sociais, é:</h1>
-		
-		
-			<div class="button b-one leftButton" onclick="buttonChange('social')" id="social">
+			<div class="button b-one socButton" onclick="buttonChange('social')" id="social">
 				<h2>Social</h2>
 			</div>
 			
-			<div class="button b-one rightButton" onclick="buttonChange('notSocial')" id="notSocial">
+			<div class="button b-one solButton" onclick="buttonChange('notSocial')" id="notSocial">
 				<h2>Solitário</h2>
 			</div>
+			
+			<div class="webgl-content">
+				<div id="gameContainer" style="width: 100%; height: 100%"></div>
+				<div class="footer">
+					<div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
+				</div>
 			</div>
-		
-
-		<div class="webgl-content">
-		  <div id="gameContainer" style="width: 960px; height: 600px"></div>
-		  <div class="footer">
-			<div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
-		  </div>
 		</div>
-
+	
 		</div>
 		
 	<!-- The core Firebase JS SDK is always required and must be listed first -->
